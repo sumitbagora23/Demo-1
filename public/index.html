@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CK Group of Companies — international business group connecting India, Africa, UAE and China through machinery, mining, trade, healthcare and technology.">
+    <title>CK Group of Companies | Building Opportunities Across Continents</title>
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CK Group of Companies",
+        "url": "https://ckgroup.com",
+        "logo": "assets/logo.webp",
+        "description": "International business group connecting India, Africa, UAE and China through machinery, mining, trade, healthcare and technology.",
+        "founder": { "@type": "Person", "name": "Chetan Kalirana" },
+        "areaServed": ["India", "Liberia", "Ghana", "UAE", "China"]
+      }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/logo.webp">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              deep: "#0a0a0a",
+              ink: "#121212",
+              gold: {
+                DEFAULT: "#D4AF37",
+                bright: "#FFD700",
+                dark: "#B8860B",
+              },
+              silver: {
+                DEFAULT: "#C0C0C0",
+                light: "#E5E4E2",
+                muted: "#A9A9A9",
+              },
+              slateglass: "rgba(15, 23, 42, 0.5)",
+            },
+            fontFamily: {
+              sans: ["DM Sans", "system-ui", "sans-serif"],
+              display: ["Outfit", "system-ui", "sans-serif"],
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+                "33%": { transform: "translate(12px, -20px) scale(1.05)" },
+                "66%": { transform: "translate(-8px, 12px) scale(0.98)" },
+              },
+            },
+            animation: {
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              float: "float 14s ease-in-out infinite",
+              "float-delayed": "float 18s ease-in-out infinite 2s",
+              "float-slow": "float 22s ease-in-out infinite 1s",
+            },
+          },
+        },
+      };
+    </script>
+    
+    <!-- Custom Helper Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-silver-light/95 bg-deep relative">
+    
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" aria-hidden="true" style="width: 0%;"></div>
+    
+    <!-- Cursor Glow Tracking -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+    
+    <!-- Canvas Particles -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- Page Loader -->
+    <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading CK Group">
+      <div class="page-loader__inner">
+        <div class="page-loader__glow" aria-hidden="true"></div>
+        <div class="page-loader__ring" aria-hidden="true"></div>
+        <img src="assets/logo.webp" alt="CK Group" class="page-loader__logo h-12 w-auto object-contain" width="180" height="64" decoding="async">
+      </div>
+      <p class="page-loader__tagline">Building Opportunities Across Continents</p>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="site-nav" class="site-header site-header--over-hero fixed top-0 left-0 right-0 z-[10000] border-b border-transparent bg-deep/80 backdrop-blur-md transition-[background,box-shadow,border-color,padding] duration-500 ease-out">
+      <div class="site-header__inner mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 transition-[padding] duration-500 md:gap-8 md:px-8 md:py-5">
+        <a href="#hero" class="nav-brand flex shrink-0 items-center gap-3 outline-none transition-transform duration-300 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-gold/50 rounded-lg">
+          <img src="assets/logo.webp" alt="CK Group of Companies" class="h-10 md:h-12 w-auto object-contain" width="180" height="64">
+        </a>
+        
+        <nav class="hidden md:block" aria-label="Primary">
+          <ul class="flex items-center gap-1 lg:gap-2">
+            <li>
+              <a href="#hero" class="nav-link px-3 py-2 text-sm font-medium text-silver-light/90 hover:text-gold transition lg:px-4">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="nav-link px-3 py-2 text-sm font-medium text-silver-light/90 hover:text-gold transition lg:px-4">About Us</a>
+            </li>
+            <li>
+              <a href="#companies-showcase" class="nav-link px-3 py-2 text-sm font-medium text-silver-light/90 hover:text-gold transition lg:px-4">Businesses</a>
+            </li>
+            <li>
+              <a href="#why-choose" class="nav-link px-3 py-2 text-sm font-medium text-silver-light/90 hover:text-gold transition lg:px-4">Why Us</a>
+            </li>
+            <li>
+              <a href="#testimonials" class="nav-link px-3 py-2 text-sm font-medium text-silver-light/90 hover:text-gold transition lg:px-4">Testimonials</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="nav-cta ripple-wrap btn-primary hidden items-center rounded-full px-5 py-2.5 text-sm font-bold tracking-wide text-deep shadow-lg md:inline-flex">Contact Us</a>
+          <button type="button" id="hamburger" class="hamburger flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.06] md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+            <span class="w-5 h-0.5 bg-white block transition-all"></span>
+            <span class="w-5 h-0.5 bg-white block transition-all"></span>
+            <span class="w-5 h-0.5 bg-white block transition-all"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile panel -->
+    <div id="mobile-panel" class="mobile-panel fixed inset-y-0 right-0 z-[9999] w-[min(100%,320px)] border-l border-gold/15 bg-deep/98 p-6 pt-28 backdrop-blur-2xl md:hidden transition-transform duration-300 translate-x-full" role="dialog" aria-modal="true" aria-label="Menu">
+      <ul class="space-y-1 text-lg font-medium text-silver-light">
+        <li><a href="#hero" class="mobile-nav-link block rounded-lg px-3 py-3 hover:bg-white/5 hover:text-gold" onclick="toggleMobileMenu()">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link block rounded-lg px-3 py-3 hover:bg-white/5 hover:text-gold" onclick="toggleMobileMenu()">About Us</a></li>
+        <li><a href="#companies-showcase" class="mobile-nav-link block rounded-lg px-3 py-3 hover:bg-white/5 hover:text-gold" onclick="toggleMobileMenu()">Businesses</a></li>
+        <li><a href="#why-choose" class="mobile-nav-link block rounded-lg px-3 py-3 hover:bg-white/5 hover:text-gold" onclick="toggleMobileMenu()">Why Us</a></li>
+        <li><a href="#testimonials" class="mobile-nav-link block rounded-lg px-3 py-3 hover:bg-white/5 hover:text-gold" onclick="toggleMobileMenu()">Testimonials</a></li>
+      </ul>
+      <a href="#contact" class="ripple-wrap nav-cta btn-primary mt-8 flex w-full justify-center rounded-full py-3.5 text-base font-bold text-deep shadow-lg" onclick="toggleMobileMenu()">Contact Us</a>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10">
+
+        <!-- ==================== CORPORATE PORTAL VIEW ==================== -->
+        <div id="corporate-view">
+
+            <!-- Hero — cinematic banner -->
+            <section id="hero" class="hero-cinematic relative flex min-h-[100svh] min-h-[100dvh] flex-col overflow-hidden">
+                <!-- Hero Orbits Background Vector (No Image/Video) -->
+                <div class="pointer-events-none absolute inset-0 overflow-hidden bg-deep" aria-hidden="true">
+                  <!-- Gradient layers -->
+                  <div class="absolute inset-0 bg-gradient-to-b from-deep via-black to-deep opacity-95"></div>
+                  
+                  <!-- Orbits / concentric gold circle lines -->
+                  <div class="absolute inset-0 flex items-center justify-center opacity-30 select-none pointer-events-none">
+                    <div class="absolute w-[350px] h-[350px] rounded-full border border-gold/20"></div>
+                    <div class="absolute w-[550px] h-[550px] rounded-full border border-gold/15"></div>
+                    <div class="absolute w-[750px] h-[750px] rounded-full border border-gold/10"></div>
+                    <div class="absolute w-[950px] h-[950px] rounded-full border border-gold/5"></div>
+                    <div class="absolute w-[1200px] h-[1200px] rounded-full border border-white/5"></div>
+                    <!-- Intersecting Orbits -->
+                    <div class="absolute w-[650px] h-[450px] rounded-full border border-gold/10 rotate-[25deg] translate-x-[-100px] translate-y-[50px]"></div>
+                    <div class="absolute w-[850px] h-[550px] rounded-full border border-gold/5 -rotate-[15deg] translate-x-[150px] translate-y-[-50px]"></div>
+                  </div>
+                  
+                  <!-- Subtle gold ambient glow centers -->
+                  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-[120px]"></div>
+                  
+                  <div class="hero-overlay hero-overlay--vignette"></div>
+                </div>
+                <div class="hero-mesh z-[1] opacity-60"></div>
+                <div class="hero-grid z-[1] opacity-50"></div>
+                <div class="hero-vignette z-[1]"></div>
+                
+                <div class="hero-cinematic__frame pointer-events-none absolute inset-4 z-[2] rounded-lg border border-gold/15 md:inset-6 md:rounded-xl" aria-hidden="true"></div>
+
+                <div class="hero-parallax relative z-10 flex min-h-[100svh] min-h-[100dvh] w-full flex-col px-4 sm:px-6 lg:px-8">
+                  <div class="hero-depth-content flex flex-1 flex-col justify-center">
+                    <div class="mx-auto w-full max-w-4xl text-center">
+                      <p class="hero-entrance-eyebrow mb-6 text-[11px] font-semibold uppercase tracking-[0.35em] text-gold/95 sm:text-xs">
+                        Building Opportunities Across Continents
+                      </p>
+                      <div class="hero-entrance-line mx-auto mb-8 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent sm:w-32"></div>
+                      <h1 class="hero-entrance-title font-display text-[1.65rem] font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl md:leading-[1.06] lg:text-6xl xl:text-7xl">
+                        <span class="block overflow-hidden"><span class="inline-block">CK Group</span></span>
+                        <span class="block overflow-hidden"><span class="inline-block text-gold">Of Companies</span></span>
+                      </h1>
+                      <p class="hero-entrance-sub mx-auto mt-5 max-w-2xl text-base font-semibold leading-relaxed text-silver-light/95 sm:text-lg md:mt-6 md:text-xl">
+                        Connecting India, Africa &amp; The World Through Machinery, Mining, Trade, Healthcare &amp; Innovation.
+                      </p>
+                      <div class="hero-entrance-sub mx-auto mt-8 flex flex-col items-center justify-center gap-4">
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto justify-center">
+                          <a href="#companies-showcase" class="ripple-wrap btn-primary inline-flex min-h-[48px] items-center justify-center rounded-full px-7 py-3 text-sm font-bold text-deep sm:text-base">Explore Our Businesses</a>
+                          <a href="#contact" class="ripple-wrap inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-gold/30 px-7 py-3 text-sm font-semibold text-white transition sm:text-base">Invest With Us</a>
+                        </div>
+                        <div>
+                          <a href="https://wa.me/917224999999?text=Hello%20CK%20Group%2C%20I%20would%20like%20to%20connect%20regarding%20your%20services." id="hero-whatsapp-cta" class="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-[#25d366]/30 bg-[#25d366]/5 hover:bg-[#25d366]/10 hover:border-[#25d366]/60 px-8 py-3 text-sm font-semibold text-[#25d366] transition" data-whatsapp-cta="" target="_blank" rel="noopener noreferrer">Contact Us on WhatsApp</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mx-auto mt-auto w-full max-w-5xl pb-8 md:pb-10">
+                    <a href="#companies-showcase" class="hero-cinematic__scroll mx-auto mt-6 flex flex-col items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/45 transition hover:text-gold/90">
+                      <span>Explore</span>
+                      <i class="fa-solid fa-chevron-down animate-bounce text-sm"></i>
+                    </a>
+                  </div>
+                </div>
+            </section>
+
+            <div class="wave-divider bg-deep text-black/5">
+                <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="w-full h-14 fill-ink">
+                  <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" class="fill-deep"></path>
+                </svg>
+            </div>
+
+            <!-- Group companies showcase -->
+            <section id="companies-showcase" class="home-companies relative border-t border-white/5 bg-deep py-16 md:py-24" aria-labelledby="companies-showcase-heading">
+                <div class="mx-auto max-w-7xl px-4">
+                  <div class="home-companies__head mx-auto mb-12 max-w-2xl text-center md:mb-14 lg:mx-0 lg:text-left">
+                    <p class="text-xs font-semibold uppercase tracking-[0.28em] text-gold/90">Our Global Business Ecosystem</p>
+                    <h2 id="companies-showcase-heading" class="mt-2 font-display text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+                      One Group. Multiple Industries. Unlimited Possibilities.
+                    </h2>
+                    <p class="mx-auto mt-3 max-w-xl text-sm text-silver-muted md:text-base lg:mx-0">
+                      Explore how each division of CK Group creates value across equipment, trade, healthcare and technology.
+                    </p>
+                  </div>
+
+                  <div class="home-companies__grid grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+                    <!-- Division 01 -->
+                    <div class="net-hub-card glass-card group block overflow-hidden rounded-2xl">
+                      <div class="net-hub-card__media relative aspect-[16/11] overflow-hidden">
+                        <img src="assets/division-1.png" alt="Heavy equipment and mining solutions" class="net-hub-card__img h-full w-full object-cover" width="800" height="550" loading="eager">
+                      </div>
+                      <div class="p-5 md:p-6">
+                        <span class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold/80">Division 01</span>
+                        <h3 class="mt-2 font-display text-xl font-bold tracking-wide text-white">Heavy Equipment &amp; Mining Solutions</h3>
+                        <p class="mt-3 text-sm font-light leading-relaxed text-silver-muted">
+                          Supporting mining, construction and infrastructure projects through world-class machinery solutions.
+                        </p>
+                        <a href="#contact" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold transition group-hover:text-gold-bright">CK Equipments <span aria-hidden="true">→</span></a>
+                      </div>
+                    </div>
+
+                    <!-- Division 02 -->
+                    <div class="net-hub-card glass-card group block overflow-hidden rounded-2xl">
+                      <div class="net-hub-card__media relative aspect-[16/11] overflow-hidden">
+                        <img src="assets/China-Door-to-Door-Supply.png" alt="International trade and global procurement" class="net-hub-card__img h-full w-full object-cover" width="800" height="550" loading="lazy">
+                      </div>
+                      <div class="p-5 md:p-6">
+                        <span class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold/80">Division 02</span>
+                        <h3 class="mt-2 font-display text-xl font-bold tracking-wide text-white">International Trade &amp; Procurement</h3>
+                        <p class="mt-3 text-sm font-light leading-relaxed text-silver-muted">
+                          Connecting buyers and suppliers through reliable sourcing and global trade networks.
+                        </p>
+                        <a href="#contact" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold transition group-hover:text-gold-bright">CK Global Trade <span aria-hidden="true">→</span></a>
+                      </div>
+                    </div>
+
+                    <!-- Division 03 -->
+                    <div class="net-hub-card glass-card group block overflow-hidden rounded-2xl">
+                      <div class="net-hub-card__media relative aspect-[16/11] overflow-hidden">
+                        <img src="assets/Medical-Tourism.jpg" alt="Doctor consultation and patient checkup" class="net-hub-card__img h-full w-full object-cover" width="800" height="550" loading="lazy">
+                      </div>
+                      <div class="p-5 md:p-6">
+                        <span class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold/80">Division 03</span>
+                        <h3 class="mt-2 font-display text-xl font-bold tracking-wide text-white">Medical Tourism</h3>
+                        <p class="mt-3 text-sm font-light leading-relaxed text-silver-muted">
+                          Providing international patients access to advanced healthcare and medical treatment in India.
+                        </p>
+                        <a href="#contact" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold transition group-hover:text-gold-bright">CK MediBridge International <span aria-hidden="true">→</span></a>
+                      </div>
+                    </div>
+
+                    <!-- Division 04 -->
+                    <div class="net-hub-card glass-card group block overflow-hidden rounded-2xl">
+                      <div class="net-hub-card__media relative aspect-[16/11] overflow-hidden">
+                        <img src="assets/built-robotics-zmW-UG2OX_M-unsplash.jpg.webp" alt="Smart equipment management technology" class="net-hub-card__img h-full w-full object-cover" width="800" height="550" loading="lazy">
+                      </div>
+                      <div class="p-5 md:p-6">
+                        <span class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold/80">Division 04</span>
+                        <h3 class="mt-2 font-display text-xl font-bold tracking-wide text-white">Technology Solutions</h3>
+                        <p class="mt-3 text-sm font-light leading-relaxed text-silver-muted">
+                          Developing smart platforms that improve operational efficiency and business management.
+                        </p>
+                        <a href="#contact" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold transition group-hover:text-gold-bright">XcavaTracker <span aria-hidden="true">→</span></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- View All Businesses -->
+                  <div class="mt-12 text-center">
+                    <a href="#about" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-gold-bright transition">
+                      View all businesses <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section id="why-choose" class="relative border-t border-white/5 bg-ink py-24 md:py-32">
+                <div class="mx-auto max-w-7xl px-4">
+                  <div class="mx-auto mb-12 max-w-2xl text-center md:mb-14">
+                    <p class="text-sm font-semibold uppercase tracking-widest text-gold">Why CK Group</p>
+                    <h2 class="mt-2 font-display text-3xl font-bold text-white md:text-5xl">Why Businesses Choose CK Group</h2>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <!-- Row 1 -->
+                    <article class="about-feature-card">
+                      <h3 class="font-display text-lg font-bold text-white md:text-xl">Global Network</h3>
+                      <p class="mt-3 text-center text-sm leading-relaxed text-silver-muted">Strong business relationships across India, Africa and international markets.</p>
+                    </article>
+                    <article class="about-feature-card">
+                      <h3 class="font-display text-lg font-bold text-white md:text-xl">Industry Experience</h3>
+                      <p class="mt-3 text-center text-sm leading-relaxed text-silver-muted">Practical expertise across machinery, mining, trade and healthcare sectors.</p>
+                    </article>
+                    <!-- Row 2 -->
+                    <article class="about-feature-card">
+                      <h3 class="font-display text-lg font-bold text-white md:text-xl">End-to-End Solutions</h3>
+                      <p class="mt-3 text-center text-sm leading-relaxed text-silver-muted">From sourcing and procurement to operations and project management.</p>
+                    </article>
+                    <article class="about-feature-card">
+                      <h3 class="font-display text-lg font-bold text-white md:text-xl">Transparency</h3>
+                      <p class="mt-3 text-center text-sm leading-relaxed text-silver-muted">Clear communication, ethical practices and long-term trust.</p>
+                    </article>
+                  </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section id="testimonials" class="relative border-t border-white/5 bg-deep py-24 md:py-32">
+                <div class="mx-auto max-w-7xl px-4">
+                  <div class="mx-auto mb-12 max-w-2xl text-center md:mb-14">
+                    <p class="text-sm font-semibold uppercase tracking-widest text-gold">Testimonials</p>
+                    <h2 class="mt-2 font-display text-3xl font-bold text-white md:text-5xl">What Our Partners Say</h2>
+                    <p class="mx-auto mt-4 max-w-xl text-silver-muted">Trusted by clients, investors and partners across machinery, mining, trade and healthcare corridors.</p>
+                  </div>
+                  <div class="max-w-3xl mx-auto flex flex-col gap-6">
+                    <article class="testimonial-card">
+                      <div class="text-gold text-5xl font-serif leading-none opacity-80 mb-2">“</div>
+                      <blockquote class="testimonial-card__quote">
+                        <p class="testimonial-card__text">CK Equipments mobilised excavators for our mining site on schedule, with clear reporting on working hours, fuel and maintenance. A dependable partner for ground-level operations.</p>
+                      </blockquote>
+                      <footer class="testimonial-card__author">
+                        <p class="testimonial-card__name">Samuel A.</p>
+                        <p class="testimonial-card__role">Mining Project Manager · Ghana</p>
+                      </footer>
+                    </article>
+                    <article class="testimonial-card">
+                      <div class="text-gold text-5xl font-serif leading-none opacity-80 mb-2">“</div>
+                      <blockquote class="testimonial-card__quote">
+                        <p class="testimonial-card__text">From commodity sourcing to China procurement, CK Global Trade managed documentation and logistics with transparency. Communication was consistent from enquiry to delivery.</p>
+                      </blockquote>
+                      <footer class="testimonial-card__author">
+                        <p class="testimonial-card__name">Ibrahim K.</p>
+                        <p class="testimonial-card__role">Import-Export Partner · Liberia</p>
+                      </footer>
+                    </article>
+                    <article class="testimonial-card">
+                      <div class="text-gold text-5xl font-serif leading-none opacity-80 mb-2">“</div>
+                      <blockquote class="testimonial-card__quote">
+                        <p class="testimonial-card__text">CK MediBridge coordinated hospital appointments, medical evaluation and travel support for our family member’s treatment in India. We felt guided and supported at every step.</p>
+                      </blockquote>
+                      <footer class="testimonial-card__author">
+                        <p class="testimonial-card__name">Fatima H.</p>
+                        <p class="testimonial-card__role">Medical Tourism Client · UAE</p>
+                      </footer>
+                    </article>
+                  </div>
+                </div>
+            </section>
+
+            <!-- Welcome To CK Group / About Story -->
+            <section id="about" class="about-story relative overflow-hidden py-28 md:py-36 bg-ink">
+                <div class="about-story__intro relative z-10 mx-auto max-w-5xl px-4 text-center md:px-8">
+                  <p class="about-story__eyebrow text-[11px] font-semibold uppercase tracking-[0.38em] text-gold/85 md:text-xs">Company Introduction</p>
+                  <h2 class="about-story__headline mt-8 font-display text-[2.1rem] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl lg:leading-[1.02]">
+                    One Group. Multiple Industries.<br>
+                    <span class="text-gold">Unlimited Possibilities.</span>
+                  </h2>
+
+                  <p class="mx-auto mt-10 max-w-3xl text-sm sm:text-base md:text-lg leading-relaxed text-silver-muted/90 text-center">
+                    CK Group of Companies is a fast-growing international business group founded by Mr. Chetan Kalirana. The group works across heavy machinery procurement, excavator rental, mining support services, global import-export, China sourcing, medical tourism and technology-based equipment management solutions.
+                  </p>
+                  <p class="mx-auto mt-6 max-w-3xl text-sm sm:text-base md:text-lg leading-relaxed text-silver-muted/90 text-center">
+                    With operations and networks across India, Liberia, Ghana, UAE, China and other global markets, CK Group focuses on practical execution, transparent business processes and long-term partnerships.
+                  </p>
+                </div>
+
+                <!-- CTA buttons for About Section -->
+                <div class="relative z-10 mt-12 flex flex-col gap-4 justify-center items-center px-4">
+                  <a href="#companies-showcase" class="ripple-wrap inline-flex min-h-[48px] w-full max-w-xs sm:w-60 items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-gold/30 px-8 py-3.5 text-sm font-semibold text-white transition tracking-wide">Our Services</a>
+                  <a href="#about" class="ripple-wrap btn-primary inline-flex min-h-[48px] w-full max-w-xs sm:w-60 items-center justify-center rounded-full px-8 py-3.5 text-sm font-bold text-deep transition tracking-wide">Who We Are</a>
+                </div>
+
+                <!-- Country Ticker -->
+                <div class="w-full border-t border-b border-white/5 py-6 mt-16 relative z-10">
+                  <div class="mx-auto max-w-5xl px-4 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-[10px] sm:text-xs font-semibold tracking-[0.25em] text-silver-muted/60 uppercase text-center">
+                    <span>India</span>
+                    <span class="text-gold/40 text-[9px] font-bold">.</span>
+                    <span>Liberia</span>
+                    <span class="text-gold/40 text-[9px] font-bold">.</span>
+                    <span>Ghana</span>
+                    <span class="text-gold/40 text-[9px] font-bold">.</span>
+                    <span>UAE</span>
+                    <span class="text-gold/40 text-[9px] font-bold">.</span>
+                    <span>China</span>
+                    <span class="text-gold/40 text-[9px] font-bold">.</span>
+                    <span>Global Markets</span>
+                  </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="relative border-t border-white/5 bg-deep py-24 md:py-32">
+                <div class="mx-auto max-w-7xl px-4">
+                  <div class="mx-auto mb-12 max-w-2xl text-center md:mb-14">
+                    <p class="text-sm font-semibold uppercase tracking-widest text-gold">Get in Touch</p>
+                    <h2 class="mt-2 font-display text-3xl font-bold text-white md:text-5xl">Let's Build The Future Together</h2>
+                    <p class="mx-auto mt-4 max-w-xl text-silver-muted">Connect with our divisions regarding machinery leasing, mining, international trade, or medical tourism inquiries.</p>
+                  </div>
+
+                  <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+                    <!-- Form -->
+                    <div class="lg:col-span-7 bg-ink border border-white/5 rounded-2xl p-6 sm:p-8">
+                      <h3 class="font-display text-xl font-bold text-white mb-6">Send Inquiry</h3>
+                      <form id="main-contact-form" class="space-y-5" novalidate>
+
+                        <!-- Dropdown Select (Enquiry type) -->
+                        <div>
+                          <div class="h-[68px] bg-deep/80 border border-white/10 rounded-xl px-4 pt-2.5 pb-2 relative flex flex-col justify-center transition-colors">
+                            <label for="inquiry_type" class="block text-[10px] font-semibold tracking-wider text-gold mb-0.5">Enquiry type</label>
+                            <select id="inquiry_type" name="inquiry_type" class="w-full bg-transparent border-0 p-0 text-white text-base focus:outline-none appearance-none cursor-pointer" required aria-describedby="err-inquiry_type">
+                              <option value="Business Inquiry" class="bg-deep text-white">Business Inquiry</option>
+                              <option value="Partnership Opportunity" class="bg-deep text-white">Partnership Opportunity</option>
+                              <option value="Investment Discussion" class="bg-deep text-white">Investment Discussion</option>
+                              <option value="Project Consultation" class="bg-deep text-white">Project Consultation</option>
+                              <option value="International Trade Support" class="bg-deep text-white">International Trade Support</option>
+                            </select>
+                          </div>
+                          <p id="err-inquiry_type" class="field-error hidden mt-1.5 text-xs text-red-400"></p>
+                        </div>
+
+                        <!-- Full name -->
+                        <div>
+                          <input type="text" id="full_name" name="full_name" placeholder="Full name" autocomplete="name" maxlength="80" class="h-[68px] w-full bg-deep/80 border border-white/10 rounded-xl px-4 text-white placeholder-silver-muted/50 focus:outline-none focus:border-gold transition text-base" required aria-describedby="err-full_name">
+                          <p id="err-full_name" class="field-error hidden mt-1.5 text-xs text-red-400"></p>
+                        </div>
+
+                        <!-- Work email -->
+                        <div>
+                          <input type="email" id="email" name="email" placeholder="Work email" autocomplete="email" maxlength="120" class="h-[68px] w-full bg-deep/80 border border-white/10 rounded-xl px-4 text-white placeholder-silver-muted/50 focus:outline-none focus:border-gold transition text-base" required aria-describedby="err-email">
+                          <p id="err-email" class="field-error hidden mt-1.5 text-xs text-red-400"></p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                          <input type="tel" id="phone" name="phone" placeholder="Phone (optional)" autocomplete="tel" maxlength="20" class="h-[68px] w-full bg-deep/80 border border-white/10 rounded-xl px-4 text-white placeholder-silver-muted/50 focus:outline-none focus:border-gold transition text-base" aria-describedby="err-phone">
+                          <p id="err-phone" class="field-error hidden mt-1.5 text-xs text-red-400"></p>
+                        </div>
+
+                        <!-- Project details -->
+                        <div>
+                          <textarea id="details" name="details" placeholder="Project details" rows="4" maxlength="2000" class="w-full bg-deep/80 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-silver-muted/50 focus:outline-none focus:border-gold transition resize-none text-base" required aria-describedby="err-details"></textarea>
+                          <p id="err-details" class="field-error hidden mt-1.5 text-xs text-red-400"></p>
+                        </div>
+
+                        <button type="submit" id="form-submit-btn" class="w-full btn-primary py-4 rounded-full font-bold text-deep hover:scale-[1.01] transition shadow-lg flex items-center justify-center gap-2">
+                          <span class="btn-text">Send Request</span>
+                          <span class="btn-spinner hidden"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+                        </button>
+                      </form>
+                    </div>
+
+                    <!-- Office Details Card -->
+                    <div class="lg:col-span-5 bg-ink border border-white/5 rounded-2xl p-6 sm:p-8 space-y-6">
+                      <h3 class="font-display text-xl font-bold text-white">Our Offices</h3>
+                      
+                      <div class="space-y-4 text-sm">
+                        <!-- India -->
+                        <div>
+                          <h4 class="font-bold text-white">India Office <span class="text-[10px] bg-white/10 px-1 py-0.5 rounded uppercase font-bold text-silver-muted ml-1">IN</span></h4>
+                          <p class="text-xs text-silver-muted">Jodhpur, Rajasthan</p>
+                          <a href="tel:+917224999999" class="inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold-bright transition mt-1"><i class="fa-solid fa-phone"></i> +91 72249 99999</a>
+                        </div>
+
+                        <!-- Liberia -->
+                        <div>
+                          <h4 class="font-bold text-white">Liberia Office <span class="text-[10px] bg-white/10 px-1 py-0.5 rounded uppercase font-bold text-silver-muted ml-1">LR</span></h4>
+                          <p class="text-xs text-silver-muted">Near Freeport, Monrovia, Liberia</p>
+                          <a href="tel:+231887775539" class="inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold-bright transition mt-1"><i class="fa-solid fa-phone"></i> +231 88 777 5539</a>
+                        </div>
+
+                        <!-- Ghana -->
+                        <div>
+                          <h4 class="font-bold text-white">Ghana Office <span class="text-[10px] bg-white/10 px-1 py-0.5 rounded uppercase font-bold text-silver-muted ml-1">GH</span></h4>
+                          <p class="text-xs text-silver-muted">Nsuta Junction, Tarkwa, Ghana</p>
+                          <a href="tel:+233247151013" class="inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold-bright transition mt-1"><i class="fa-solid fa-phone"></i> +233 24 715 1013</a>
+                        </div>
+
+                        <!-- UAE -->
+                        <div>
+                          <h4 class="font-bold text-white">UAE Office</h4>
+                          <p class="text-xs text-silver-muted">Mankhool, Bur Dubai, Dubai</p>
+                        </div>
+
+                        <!-- China -->
+                        <div>
+                          <h4 class="font-bold text-white">China Office</h4>
+                          <p class="text-xs text-silver-muted">China</p>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="pt-3 border-t border-white/5">
+                          <h5 class="text-xs font-bold uppercase tracking-wider text-gold">Email</h5>
+                          <a href="mailto:Support@ckgroup.in" class="inline-flex items-center gap-2 text-xs text-silver-light hover:text-white mt-1"><i class="fa-solid fa-envelope text-gold"></i> Support@ckgroup.in</a>
+                        </div>
+
+                        <!-- Business Inquiries -->
+                        <div class="pt-3 border-t border-white/5">
+                          <h5 class="text-xs font-bold uppercase tracking-wider text-gold">Business Inquiries</h5>
+                          <ul class="text-xs text-silver-muted space-y-1 mt-1 font-light">
+                            <li>Partnership Opportunities</li>
+                            <li>Investment Discussions</li>
+                            <li>Project Consultations</li>
+                            <li>International Trade Support</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="pt-4 border-t border-white/5">
+                        <a href="#contact" class="ripple-wrap inline-flex justify-center items-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 hover:border-gold/30 px-6 py-2.5 text-xs font-bold text-white transition w-full sm:w-auto">Full contact details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+        </div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-deep border-t border-white/5 py-16 text-silver-muted text-sm relative z-10">
+      <div class="mx-auto max-w-7xl px-4">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-white/5">
+          <!-- Col 1: Logo and tagline -->
+          <div class="lg:col-span-4 flex flex-col items-start space-y-4">
+            <img src="assets/logo.webp" alt="CK Group of Companies Logo" class="h-10 md:h-12 w-auto object-contain">
+            <div>
+              <h3 class="text-white font-display font-bold text-lg">CK Group of Companies</h3>
+              <p class="mt-2 text-xs leading-relaxed italic">“Connecting Opportunities. Creating Growth. Building The Future.”</p>
+            </div>
+          </div>
+          
+          <!-- Col 2: CONTACT details -->
+          <div class="lg:col-span-6 space-y-4">
+            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-gold">Contact</h4>
+            
+            <div class="space-y-4 text-xs md:text-sm">
+              <!-- Email -->
+              <div class="flex items-center gap-2 text-silver-light">
+                <i class="fa-solid fa-envelope text-gold text-base"></i>
+                <a href="mailto:Support@ckgroup.in" class="hover:text-white transition">Support@ckgroup.in</a>
+              </div>
+              
+              <!-- India -->
+              <div>
+                <h5 class="font-bold text-white">India Office <span class="text-[9px] bg-white/10 px-1 py-0.5 rounded uppercase font-bold text-silver-light ml-1">IN</span></h5>
+                <p class="text-xs text-silver-muted">Jodhpur, Rajasthan</p>
+                <a href="tel:+917224999999" class="inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold-bright transition mt-0.5"><i class="fa-solid fa-phone"></i> +91 72249 99999</a>
+              </div>
+              
+              <!-- Liberia -->
+              <div>
+                <h5 class="font-bold text-white">Liberia Office <span class="text-[9px] bg-white/10 px-1 py-0.5 rounded uppercase font-bold text-silver-light ml-1">LR</span></h5>
+                <p class="text-xs text-silver-muted">Near Freeport, Monrovia, Liberia</p>
+                <a href="tel:+231887775539" class="inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold-bright transition mt-0.5"><i class="fa-solid fa-phone"></i> +231 88 777 5539</a>
+              </div>
+              
+              <!-- Ghana -->
+              <div>
+                <h5 class="font-bold text-white">Ghana Office <span class="text-[9px] bg-white/10 px-1 py-0.5 rounded uppercase font-bold text-silver-light ml-1">GH</span></h5>
+                <p class="text-xs text-silver-muted">Nsuta Junction, Tarkwa, Ghana</p>
+                <a href="tel:+233247151013" class="inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold-bright transition mt-0.5"><i class="fa-solid fa-phone"></i> +233 24 715 1013</a>
+              </div>
+              
+              <!-- UAE -->
+              <div>
+                <h5 class="font-bold text-white">UAE Office</h5>
+                <p class="text-xs text-silver-muted">Mankhool, Bur Dubai, Dubai</p>
+              </div>
+              
+              <!-- China -->
+              <div>
+                <h5 class="font-bold text-white">China Office</h5>
+                <p class="text-xs text-silver-muted font-light">China</p>
+              </div>
+            </div>
+            
+            <div class="pt-4 border-t border-white/5 text-xs text-silver-muted font-light tracking-wide">
+              Partnership · Investment · Projects · International Trade
+            </div>
+          </div>
+          
+          <!-- Col 3: FOLLOW -->
+          <div class="lg:col-span-2 space-y-4">
+            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-gold">Follow</h4>
+            <div class="flex items-center gap-4 text-silver-muted">
+              <a href="#" class="hover:text-white transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+              <a href="#" class="hover:text-white transition" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter text-2xl"></i></a>
+              <a href="#" class="hover:text-white transition" aria-label="YouTube"><i class="fa-brands fa-youtube text-2xl"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bottom copyright -->
+        <div class="pt-8 text-center text-xs text-silver-muted">
+          &copy; 2026 CK Group. All rights reserved.
+        </div>
+        
+      </div>
+    </footer>
+
+
+    <!-- Contact Submission Confirmation Modal -->
+    <div class="modal-overlay hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[20000] flex items-center justify-center" id="success-modal">
+        <div class="bg-ink border border-white/10 shadow-2xl rounded-2xl max-w-lg w-full p-8 relative mx-4 text-center">
+            <button class="absolute top-4 right-4 text-silver-muted hover:text-white transition" onclick="closeSuccessModal()"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <div class="h-16 w-16 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-4 animate-pulse-slow">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-white font-display text-2xl font-bold">Request Sent Successfully!</h3>
+            <p class="text-sm text-silver-muted mt-2">Thank you for reaching out to CK Group.</p>
+            
+            <div class="bg-deep border-l-4 border-emerald-500 rounded-lg p-5 text-left my-6 space-y-2">
+                <div class="flex justify-between text-xs"><strong class="text-silver-muted">Ref ID:</strong> <span id="receipt-id" class="text-white font-mono">#CK-10928</span></div>
+                <div class="flex justify-between text-xs"><strong class="text-silver-muted">Type:</strong> <span id="receipt-type" class="text-white">Business Inquiry</span></div>
+                <div class="flex justify-between text-xs"><strong class="text-silver-muted">Name:</strong> <span id="receipt-name" class="text-white">John Doe</span></div>
+            </div>
+            
+            <p class="text-xs text-silver-muted">Our international division will review your submission and contact you within 24 business hours.</p>
+            <button class="btn-primary px-8 py-3 rounded-full font-bold text-deep mt-6" onclick="closeSuccessModal()">Done</button>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification -->
+    <div class="toast-notification hidden" id="toast-notify">
+        <div class="toast-content flex items-center gap-3">
+            <span class="toast-icon" id="toast-icon-wrapper"><i class="fa-solid fa-circle-info"></i></span>
+            <span class="toast-message text-silver-light" id="toast-msg-text">Notification message here</span>
+        </div>
+    </div>
+
+    <!-- Firebase (Firestore) — must load before app.js -->
+    <script type="module" src="firebase-init.js"></script>
+
+    <!-- Script Entrypoint -->
+    <script src="app.js"></script>
+</body>
+</html>
